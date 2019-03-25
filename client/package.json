@@ -1,21 +1,23 @@
 {
-  "name": "mern",
+  "name": "reactfolder",
   "version": "0.1.0",
-  "description": "Mern Demo",
   "private": true,
-  "proxy": "http://localhost:3001/",
   "dependencies": {
     "bloomer": "^0.6.5",
     "bulma": "^0.7.4",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-scripts": "^2.1.1"
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "browserslist": [
     ">0.2%",
