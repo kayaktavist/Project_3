@@ -1,19 +1,49 @@
 import React from "react";
-import { Hero, HeroBody, Title } from "bloomer";
+import logo from '../../../images/logo.svg'; // with import
+
+import {
+  Container,
+  Button,
+  Title,
+  Image,
+  Tile,
+  Box
+} from 'bloomer';
 
 function Home(props) {
   return (
     <div>
-      <Hero isColor="info" isSize="medium">
-        <HeroBody hasTextAlign="centered">
-          <Title>Welcome!</Title>
-          <p style={{ maxWidth: 600, margin: "auto" }}>
-            This project is a work in progress. The ultimate goal is to give
-            students a collection of resources as well as an example of a more
-            complex MERN application that utilizes Redux.
-          </p>
-        </HeroBody>
-      </Hero>
+      <Container>
+        <Title>ACTIVEST</Title>
+        <Tile isAncestor>
+          <Tile isParent>
+            <Tile isChild render={
+              props => (
+                <Box {...props}>
+                  <Title>
+                    <Image isRatio="2:1" src={logo} />
+                  </Title>
+                </Box>
+              )} />
+          </Tile>
+          <Tile isSize={6} isVertical isParent>
+            <Tile isChild render={
+              props => (
+                <Box {...props}>
+                  <h2>“The secret to change is to focus all of your energy not on fighting the old, but on building the new.” – Socrates</h2>
+                </Box>
+              )} />
+            <Tile isChild render={
+              props => (
+                <Box {...props}>
+                  <Title>
+                    <Button href="/discover" isColor='danger' isSize='large' isOutlined>FIND A CAUSE</Button>
+                  </Title>
+                </Box>
+              )} />
+          </Tile>
+        </Tile>
+      </Container>
     </div>
   );
 }
