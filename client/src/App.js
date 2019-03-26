@@ -27,25 +27,23 @@ class App extends Component {
 
         <Router>
           <div>
-            <HeroHeader>
-              <Nav>
-                <NavLeft>
-                  <NavItem href="/" isBrand>HOME </NavItem>
+            <Nav>
+              <NavLeft>
+                <NavItem href="/" isBrand>HOME </NavItem>
 
-                  <NavItem href="/discover" isBrand>DISCOVER</NavItem>
-                </NavLeft>
-                <NavCenter>
-                  <NavItem href="/" isBrand>HOME </NavItem>
+                <NavItem href="/discover" isBrand>DISCOVER</NavItem>
+              </NavLeft>
+              <NavCenter>
+                <NavItem href="/" isBrand>HOME </NavItem>
 
-                  <NavItem href="/discover" isBrand>DISCOVER</NavItem>
-                </NavCenter>
-                <NavRight>
-                  <NavItem href="/" isBrand>HOME </NavItem>
+                <NavItem href="/discover" isBrand>DISCOVER</NavItem>
+              </NavCenter>
+              <NavRight>
+                <NavItem href="/" isBrand>HOME </NavItem>
 
-                  <NavItem href="/discover" isBrand>DISCOVER</NavItem>
-                </NavRight>
-              </Nav>
-            </HeroHeader>
+                <NavItem href="/discover" isBrand>DISCOVER</NavItem>
+              </NavRight>
+            </Nav>
 
             <Switch>
               <Route exact path="/" component={Home} />
