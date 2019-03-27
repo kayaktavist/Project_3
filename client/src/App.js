@@ -5,20 +5,13 @@ import "../node_modules/bloomer/"
 import Home from "./components/pages/Home"
 import noMatch from "./components/pages/404page/noMatch"
 import Discover from "./components/pages/Discover"
+import Navbar from "./components/pages/NavBar";
+import Charity from "./components/pages/Charity";
+
+
 
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-import {
-
-  Nav,
-  NavLeft,
-  NavRight,
-  NavCenter,
-  NavItem,
-  HeroHeader
-
-} from 'bloomer';
 
 class App extends Component {
   render() {
@@ -27,7 +20,7 @@ class App extends Component {
 
         <Router>
           <div>
-            <Nav>
+            {/* <Nav>
               <NavLeft>
                 <NavItem href="/" isBrand>HOME </NavItem>
 
@@ -43,11 +36,14 @@ class App extends Component {
 
                 <NavItem href="/discover" isBrand>DISCOVER</NavItem>
               </NavRight>
-            </Nav>
+            </Nav> */}
+
+            <Navbar />
 
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/discover" component={Discover} />
+              <Route exact path="/discover" component={Discover} />
+              <Route exact path="/discover/charity" component={Charity} />
               <Route component={noMatch} />
               {/* <Route path="/react-examples" component={ReactExamples} /> */}
             </Switch>
