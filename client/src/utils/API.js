@@ -1,10 +1,19 @@
-import axios from "axios";
+import Axios from "axios";
 
 export default {
-  // Gets all books
-  getAllCharities: function() {
-    return axios.get("/api/campaign/");
+  signIn(email, password){
+    return Axios.post("/api/signin", {email, password});
   },
+  signUp(email, password){
+    return Axios.post("/api/", {email, password});
+
+  },
+  getAllCharities: function() {
+    return axios.get("/api/");
+  },
+}
+
+  // Gets all books
   // Gets the book with the given id
   // getCampaign: function(id) {
   //   return axios.get("/api/campaigns/" + id);
@@ -17,4 +26,4 @@ export default {
   // saveCampaign: function(bookData) {
   //   return axios.post("/api/campaigns", bookData);
   // }
-};
+
