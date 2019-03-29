@@ -3,16 +3,13 @@ import React, { Component } from "react";
 // import bulmaCarousel from 'bulma-extensions/bulma-carousel/dist/js/bulma-carousel';
 import Charity from "../Charity";
 import CharityList from "../CharityList";
-
-// import charityArray from "../images.json"; 
+// import charityArray from "../../../images/charityArray"
 
 
 import {
     Container,
     Title
 } from 'bloomer';
-
-
 
 class Discover extends Component {
     state = {
@@ -24,16 +21,14 @@ class Discover extends Component {
 
     handleCharitySelection = charityID => {
         var selectedCharity = this.state.charityArray[charityID];
-
         this.setState({ charityValue: selectedCharity, showList: false })
     }
 
     render() {
         return (
             <div>
-
                 {this.state.showList ? (
-                    <li>
+                    <ul>
                         {this.state.charityArray.map(charity => (
                             <CharityList
                                 charityFn={this.handleCharitySelection}
@@ -42,8 +37,7 @@ class Discover extends Component {
                                 CharityId={charity.id}
                             />
                         ))}
-                    </li>
-
+                    </ul>
                 ) : (<div>
                 </div>)}
                 <Container>
