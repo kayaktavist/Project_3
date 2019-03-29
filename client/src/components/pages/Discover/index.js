@@ -51,7 +51,6 @@ class Discover extends Component {
                                 <CharityList
                                     charityFn={this.handleCharitySelection}
                                     key={index}
-                                    // why isnt the .map giving me ID
                                     name={charity.name}
                                     CharityId={index}
                                 />
@@ -62,7 +61,6 @@ class Discover extends Component {
 
                     {this.state.charityValue ? (
                         <div>
-                            {this.state.charityValue}
 
                             <Charity
                                 {...this.state.charityValue}
