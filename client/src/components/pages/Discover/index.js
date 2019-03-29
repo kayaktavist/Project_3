@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 // import logo from '../../../images/logo.svg'; // with import
-// import bulmaCarousel from 'bulma-extensions/bulma-carousel/dist/js/bulma-carousel';
 import Charity from "../Charity";
 import CharityList from "../CharityList";
-// import charityArray from "../../../images/charityArray"
+import charityArray from "../../../images/charityArray"
+
+import API from "../../../utils/API"
 
 
 import {
@@ -15,26 +16,44 @@ class Discover extends Component {
     state = {
         charityValue: null,
         showList: true,
-        charityArray: []
+        charityArray: charityArray,
         // error: ""
     };
+    componentDidMount() {
+        console.log(this.state.charityArray)
+        // this.loadCharities();
+    }
 
     handleCharitySelection = charityID => {
         var selectedCharity = this.state.charityArray[charityID];
+        console.log(charityID)
         this.setState({ charityValue: selectedCharity, showList: false })
     }
+
+
+    loadCharities = () => {
+        API.getAllCharities()
+            .then(res => {
+                console.log(res)
+                this.setState({ charityArray: res.data })
+            })
+            .catch(err => console.log(err));
+    };
 
     render() {
         return (
             <div>
                 {this.state.showList ? (
                     <ul>
-                        {this.state.charityArray.map(charity => (
+                        {this.state.charityArray.map((charity, index) => (
+                            // Only do this if items have no stable IDs
                             <CharityList
                                 charityFn={this.handleCharitySelection}
-                                key={charity.id}
+                                key={index}
+                                // why isnt the .map giving me ID
                                 name={charity.name}
-                                CharityId={charity.id}
+                                charityId={index}
+                            // CharityId={charity.id}
                             />
                         ))}
                     </ul>
@@ -42,13 +61,18 @@ class Discover extends Component {
                 </div>)}
                 <Container>
                     <Title>DISCOVER PAGE</Title>
+
                     {this.state.charityValue ? (
-                        <Charity
-                            {...this.state.charityValue}
-                        />
+                        <div>
+                            {this.state.charityValue}
+
+                            <Charity
+                                {...this.state.charityValue}
+                            />
+                        </div>
                     ) : (
                             <div>
-                                {/* keep blank */}
+                                <p>fsfsdfsdfsdf</p>
                             </div>
                         )}
                 </Container>

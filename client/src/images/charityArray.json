@@ -1,1 +1,5 @@
-[ "OrganizationOne", "OrganizationTwo", "FiatOrganizationThree" ]
+[
+    {"name":"OrganizationOne"},
+    {"name":"OrganizationTwo"},
+    {"name":"OrganizationThree"}
+]
