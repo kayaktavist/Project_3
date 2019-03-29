@@ -43,24 +43,22 @@ class Discover extends Component {
     render() {
         return (
             <div>
-                {this.state.showList ? (
-                    <ul>
-                        {this.state.charityArray.map((charity, index) => (
-                            // Only do this if items have no stable IDs
-                            <CharityList
-                                charityFn={this.handleCharitySelection}
-                                key={index}
-                                // why isnt the .map giving me ID
-                                name={charity.name}
-                                charityId={index}
-                            // CharityId={charity.id}
-                            />
-                        ))}
-                    </ul>
-                ) : (<div>
-                </div>)}
                 <Container>
                     <Title>DISCOVER PAGE</Title>
+                    {this.state.showList ? (
+                        <ul>
+                            {this.state.charityArray.map((charity, index) => (
+                                <CharityList
+                                    charityFn={this.handleCharitySelection}
+                                    key={index}
+                                    // why isnt the .map giving me ID
+                                    name={charity.name}
+                                    CharityId={index}
+                                />
+                            ))}
+                        </ul>
+                    ) : (<div>
+                    </div>)}
 
                     {this.state.charityValue ? (
                         <div>
@@ -72,7 +70,7 @@ class Discover extends Component {
                         </div>
                     ) : (
                             <div>
-                                <p>fsfsdfsdfsdf</p>
+                                <p>Testing..Testing..</p>
                             </div>
                         )}
                 </Container>
