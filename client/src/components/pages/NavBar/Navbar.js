@@ -39,7 +39,7 @@ function Navbar(props) {
             <NavbarEnd>
           <NavbarItem>
             {props.authenticated ? (
-              <div>Welcome {props.user.email}!</div>
+              <div>Welcome!</div>
             ) : (
               <div className="buttons">
                 <Button onClick={props.signUpModal} isColor="primary">
