@@ -6,7 +6,6 @@ import charityArray from "../../../images/charityArray"
 
 import API from "../../../utils/API"
 
-
 import {
     Container,
     Title
