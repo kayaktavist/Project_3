@@ -1,41 +1,32 @@
 import React from "react";
+import Navbar from "./Navbar";
+import { connect } from "react-redux";
+import { changeModal, closeModal } from "../../../state/modal/actions";
+import { updateAuth } from "../../../state/auth/actions";
 
-import { Link } from "react-router-dom";
-import {
-    Navbar as Nav,
-    NavbarBrand,
-    NavbarItem,
-    // NavbarMenu,
-    NavbarStart,
-    NavbarDropdown,
-    NavbarLink
-} from "bloomer";
-
-function Navbar(props) {
-
-    return (
-        <Nav>
-            <NavbarBrand>
-                <NavbarItem>
-                    <h1>ACTIVEST</h1>
-                </NavbarItem>
-            </NavbarBrand>
-
-            {/* <NavbarMenu isActive={this.state.isActive} onClick={this.onClickNav}> */}
-                <NavbarStart>
-                    <Link to="/" className="navbar-item">Home</Link>
-                    <Link to="/discover" className="navbar-item">Discover</Link>
-
-                    <NavbarItem hasDropdown isHoverable style={{ padding: 0 }}>
-                        <NavbarLink>Featured</NavbarLink>
-                        <NavbarDropdown>
-                            <Link style={{ height: "100%" }} to="/featured" className="navbar-item">Featured </Link>
-                        </NavbarDropdown>
-                    </NavbarItem>
-                </NavbarStart>
-            {/* </NavbarMenu> */}
-        </Nav>
-    );
+function NavbarController(props) {
+    return <Navbar {...props} />;
 }
 
-export default Navbar;
+const mapStateToProps = state => ({
+  authenticated: state.auth.authenticated,
+  user: state.auth.user
+});
+
+const mapDispatchToProps = dispatch => ({
+  loginModal() {
+    dispatch(changeModal("LoginModal"));
+  },
+  signUpModal() {
+    dispatch(changeModal("SignUpModal"));
+  },
+  signOut() {
+    dispatch(updateAuth({}));
+    dispatch(closeModal());
+  }
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NavbarController);

@@ -2,6 +2,7 @@
   "name": "Activest",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "bloomer": "^0.6.5",
     "bulma": "^0.7.4",

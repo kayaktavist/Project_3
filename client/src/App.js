@@ -7,8 +7,11 @@ import noMatch from "./components/pages/404page/noMatch"
 import Discover from "./components/pages/Discover"
 import Navbar from "./components/pages/NavBar";
 import Charity from "./components/pages/Charity";
+import ModalController from "./components/modals";
 
-
+import AuthRoute from "./utils/AuthRoute";
+import { Provider } from "react-redux";
+import store from "./state";
 
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -16,10 +19,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 class App extends Component {
   render() {
     return (
-      <div className="App">
-
+<Provider store={store}>
         <Router>
-          <div>
             {/* <Nav>
               <NavLeft>
                 <NavItem href="/" isBrand>HOME </NavItem>
@@ -47,9 +48,9 @@ class App extends Component {
               <Route component={noMatch} />
               {/* <Route path="/react-examples" component={ReactExamples} /> */}
             </Switch>
-          </div>
+            <ModalController />
         </Router>
-      </div>
+        </Provider>
     );
   }
 }
