@@ -9,7 +9,7 @@ export default {
 
   },
   getAllCharities: function() {
-    return axios.get("/api/");
+    return Axios.get("/api/");
   },
 }
 
