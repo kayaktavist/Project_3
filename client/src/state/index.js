@@ -19,7 +19,7 @@
 // export default store;
 
 import { combineReducers, compose, applyMiddleware, createStore } from 'redux';
-import thunk from 'redux-thunk';
+
 
 // Reducers
 import modal from "./modal/reducer";
@@ -32,10 +32,8 @@ const rootReducer = combineReducers({
 
 const store = createStore(
   rootReducer,
-  compose(
-    applyMiddleware(thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+
 );
 
 export default store;
