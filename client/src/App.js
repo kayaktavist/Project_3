@@ -21,32 +21,13 @@ class App extends Component {
     return (
 <Provider store={store}>
         <Router>
-            {/* <Nav>
-              <NavLeft>
-                <NavItem href="/" isBrand>HOME </NavItem>
-
-                <NavItem href="/discover" isBrand>DISCOVER</NavItem>
-              </NavLeft>
-              <NavCenter>
-                <NavItem href="/" isBrand>HOME </NavItem>
-
-                <NavItem href="/discover" isBrand>DISCOVER</NavItem>
-              </NavCenter>
-              <NavRight>
-                <NavItem href="/" isBrand>HOME </NavItem>
-
-                <NavItem href="/discover" isBrand>DISCOVER</NavItem>
-              </NavRight>
-            </Nav> */}
-
             <Navbar />
 
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/discover" component={Discover} />
-              <Route exact path="/discover/charity" component={Charity} />
+              {/* <Route exact path="/discover/charity" component={Charity} /> */}
               <Route component={noMatch} />
-              {/* <Route path="/react-examples" component={ReactExamples} /> */}
             </Switch>
             <ModalController />
         </Router>
