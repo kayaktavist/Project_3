@@ -16,6 +16,7 @@ function LoginModal(props) {
           <CardHeaderTitle>Login!</CardHeaderTitle>
         </CardHeader>
         <CardContent>
+          <form>
           <div className="field">
             <label className="label" htmlFor="email">
               Email
@@ -50,6 +51,7 @@ function LoginModal(props) {
               Login
             </button>
           </div>
+          </form>
         </CardContent>
       </Card>
     </Modal>
