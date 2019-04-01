@@ -1,7 +1,7 @@
 import React from "react";
 import LineChart from "../../graph/LineChart"
 import datastuff from "../../graph/datacomponent"
-import Carousel from 'react-bootstrap/Carousel'
+// import Carousel from 'react-bootstrap/Carousel'
 import Carousels from "../../carousels/Carousels"
 
 import {
