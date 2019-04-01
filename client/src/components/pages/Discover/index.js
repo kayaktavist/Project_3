@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-// import logo from '../../../images/logo.svg'; // with import
 import Charity from "../Charity";
 import CharityList from "../CharityList";
-import charityArray from "../../../images/charityArray"
+// import charityArray from "../../../images/charityArray"
 
 import API from "../../../utils/API"
-
 
 import {
     Container,
@@ -16,17 +14,18 @@ class Discover extends Component {
     state = {
         charityValue: null,
         showList: true,
-        charityArray: charityArray,
+        charityArray: []
+        // charityArray: charityArray,
         // error: ""
     };
     componentDidMount() {
-        console.log(this.state.charityArray)
-        // this.loadCharities();
+        // console.log(this.state.charityArray)
+        this.loadCharities();
+
     }
 
     handleCharitySelection = charityID => {
         var selectedCharity = this.state.charityArray[charityID];
-        console.log(charityID)
         this.setState({ charityValue: selectedCharity, showList: false })
     }
 
@@ -34,9 +33,15 @@ class Discover extends Component {
     loadCharities = () => {
         API.getAllCharities()
             .then(res => {
+                console.log(res.data)
+
+
                 console.log(res)
-                this.setState({ charityArray: res.data })
+                this.setState({
+                    charityArray: res.data
+                })
             })
+
             .catch(err => console.log(err));
     };
 
@@ -44,14 +49,17 @@ class Discover extends Component {
         return (
             <div>
                 <Container>
-                    <Title>DISCOVER PAGE</Title>
+
+                    <Title >DISCOVER PAGE </Title>
+
                     {this.state.showList ? (
+
                         <ul>
                             {this.state.charityArray.map((charity, index) => (
                                 <CharityList
                                     charityFn={this.handleCharitySelection}
                                     key={index}
-                                    name={charity.name}
+                                    name={charity.page.title}
                                     CharityId={index}
                                 />
                             ))}
@@ -61,9 +69,9 @@ class Discover extends Component {
 
                     {this.state.charityValue ? (
                         <div>
-
                             <Charity
                                 {...this.state.charityValue}
+                                charity={this.state.charityValue}
                             />
                         </div>
                     ) : (
@@ -76,4 +84,5 @@ class Discover extends Component {
         )
     }
 }
+
 export default Discover;
