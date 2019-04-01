@@ -3,6 +3,11 @@ import { connect } from "react-redux";
 import Modal from "./Modal";
 import { Card, CardHeader, CardContent, CardHeaderTitle } from "bloomer";
 import { signup } from "../../state/auth/actions";
+import Axios from "axios";
+
+import { createAction } from "redux-actions";
+import API from "../../utils/API";
+import { closeModal } from "../../state/modal/actions";
 
 function SignUpModal(props) {
   const [email, setEmail] = useState("");
@@ -64,6 +69,22 @@ function SignUpModal(props) {
                 if (password === rePassword) {
                   console.log("Made it");
                   props.signup(email, password);
+                  // Axios.post().then(data => {
+                    //  INSIDE OF HERE DISPATCH ACTION WITH USER INFO ON IT
+                    // API.signUp(email, password)
+                    //   .then(res => {
+                    //     const auth = { ...res.data };
+                    //     auth.authenticated = true;
+                    //     const updateAuth = createAction("UPDATE_AUTH");
+                    //     function done (dispatch){
+                    //       dispatch(closeModal());
+                    //       dispatch(updateAuth(auth));
+                    //       console.log("dispatch")
+                    //     };
+                    //     done();
+                        
+                    //   })
+                  // })
                 }
               }}
               className="button is-primary"
