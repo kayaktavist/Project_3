@@ -76,7 +76,7 @@ class Discover extends Component {
                         </div>
                     ) : (
                             <div>
-                                <p>Testing..Testing..</p>
+                                <p></p>
                             </div>
                         )}
                 </Container>
