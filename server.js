@@ -19,7 +19,7 @@ require("./services/passport");
 
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://alex:ds211635.mlab.com:11635/heroku_cstkrv0m");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://1:vAc8uR6MybsR5g4.mlab.com:45518/heroku_jkrrhhzt");
 
 // Start the API server
 app.listen(PORT, function() {
