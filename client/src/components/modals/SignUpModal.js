@@ -20,7 +20,7 @@ function SignUpModal(props) {
           <CardHeaderTitle>Create an Account!</CardHeaderTitle>
         </CardHeader>
         <CardContent>
-          <form>
+          
             <div className="field">
               <label className="label" htmlFor="email">
                 Email
@@ -90,7 +90,7 @@ function SignUpModal(props) {
                 Sign Up
             </button>
             </div>
-          </form>
+          
         </CardContent>
       </Card>
     </Modal>
