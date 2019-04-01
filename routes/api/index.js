@@ -20,6 +20,7 @@ const campaignController = require("../../controllers/campaignController");
 
 // Matches with "/api/"
 router.route("/")
+  
   .get(function(req, res) {
     db.User
       .find(req.query)
@@ -53,6 +54,8 @@ router.route("/")
         return next(err);
       });
   });
+
+
 
 // Matches with "/api/:id"
 router
