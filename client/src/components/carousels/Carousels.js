@@ -6,10 +6,11 @@ function Carousels(props) {
 
   return (
     <Carousel>
+      {/* {console.log(JSON.stringify(props))} */}
       <Carousel.Item>
         <img
-          className="d-block w-100"
-          src="https://www.fillmurray.com/640/360"
+          className="d-block w-100 img-fluid "
+          src={props.page.images[0]}
           alt="First slide"
         />
         <Carousel.Caption>
@@ -19,8 +20,8 @@ function Carousels(props) {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
-          src="https://www.fillmurray.com/640/360"
+          className="d-block w-100 img-fluid "
+          src={props.page.images[1]}
           alt="Second slide"
         />
 
@@ -31,8 +32,8 @@ function Carousels(props) {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
-          src="https://www.fillmurray.com/640/360"
+          className="d-block w-100 img-fluid "
+          src={props.page.images[2]}
           alt="Third slide"
         />
 
