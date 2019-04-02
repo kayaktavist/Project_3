@@ -3,7 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -20,7 +20,7 @@ require("./services/passport");
 
 // Connect to the Mongo DB
 
-mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URI || "mongodb://1:vAc8uR6MybsR5g4.mlab.com:45518/heroku_jkrrhhzt");
+mongoose.connect(process.env.MONGOLAB_URI || "mongodb://1:vAc8uR6MybsR5g4.mlab.com:45518/heroku_jkrrhhzt");
 
 
 
