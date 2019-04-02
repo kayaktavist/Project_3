@@ -15,32 +15,33 @@ const Charity = props => (
 
     <div>
         <Container>
-            <Title>{props.charity.page.title}</Title>
+            <Title>{props.page.title}</Title>
             <Tile isAncestor>
                 <Tile isParent>
                     <Tile isChild render={
-                        props => (
-                            <Box {...props}>
+                        bloomerProps => (
+                            <Box {...bloomerProps}>
                                 <LineChart data={datastuff} size={[500, 300]} />
                             </Box>
                         )} />
                 </Tile>
                 <Tile isParent>
                     <Tile isChild render={
-                        props => (
-                            <Box {...props}>
-                                <Carousels />
+                        bloomerProps => (
+                            <Box {...bloomerProps}>
+                                <Carousels {...props} />
                             </Box>
                         )} />
                 </Tile>
             </Tile>
             <Tile isParent>
                 <Tile isChild render={
-                    props => (
-                        <Box {...props}>
-                            {console.log('prop', props)}
-                            <Title>Blurb </Title>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
+                    bloomerProps => (
+                        <Box {...bloomerProps}>
+                            {console.log('prop', JSON.stringify(props))}
+                            <Title>{props.page.title}</Title>
+
+                            <h3>{props.page.description}</h3>
                         </Box>
                     )} />
             </Tile>
